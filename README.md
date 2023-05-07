@@ -1,5 +1,5 @@
 # Nauka Gita
 
 ```bash
-pip install -r requirments
+pip install -r
 ```
