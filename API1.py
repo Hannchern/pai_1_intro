@@ -13,4 +13,3 @@ except urllib.error.URLError as e:
     print("Błąd URL: ", e.reason)
 except json.JSONDecodeError as e:
     print("Błąd dekodowania JSON: ", e.msg)
-")
