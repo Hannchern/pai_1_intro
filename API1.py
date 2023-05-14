@@ -1,15 +1,17 @@
-import urllib.requestss
-import json
+import webbrowser
+import requests
+import sys
 
 url = "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json"
 
 try:
-    with urllib.request.urlopen(url) as url:
-        data = json.loads(url.read().decode())
-        print(data)
-except urllib.error.HTTPError as e:
-    print("Błąd kodu HTTP: ", e.code)
-except urllib.error.URLError as e:
-    print("Błąd URL: ", e.reason)
-except json.JSONDecodeError as e:
-    print("Błąd dekodowania JSON: ", e.msg)
+    response = requests.get(url)
+    if response.status_code == 200:
+        webbrowser.open_new(url)
+    else:
+        print("Błąd kodu HTTP: ", response.status_code)
+        sys.exit()
+
+except requests.exceptions as e:
+    print("Błąd: ", e)
+    sys.exit()
