@@ -4,6 +4,8 @@ import sys
 
 url = "https://httpbin.org/post"
 
+caption = {"Content-Type: application/json"}
+
 try:
     response = requests.get(url)
     if response.status_code == 200:
