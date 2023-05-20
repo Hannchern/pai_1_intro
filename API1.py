@@ -2,7 +2,7 @@ import webbrowser
 import requests
 import sys
 
-url = "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json"
+url = "https://httpbin.org/post"
 
 try:
     response = requests.get(url)
