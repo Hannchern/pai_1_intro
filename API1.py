@@ -2,12 +2,12 @@ import webbrowser
 import requests
 import sys
 
-url = "https://httpbin.org/post"
+url = "https://httpbin.org/delay/2"
 
 caption = {"Content-Type: application/json"}
 
 try:
-    response = requests.get(url)
+    response = requests.get(url, timeout=1)
     if response.status_code == 200:
         webbrowser.open_new(url)
     else:
